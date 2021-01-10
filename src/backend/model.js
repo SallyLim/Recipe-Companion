@@ -1,6 +1,7 @@
+import { isNumber, toRational } from './numberUtil';
 
-
-measurement = [
+var measurement = [
+  "dash",
   "tablespoon",
   "teaspoon",
   "ounce",
@@ -131,10 +132,16 @@ module.exports = class Ingredient {
     }
 
     if (wordOfMeasurementIndex === -1) {
-      console.log("b")
-      this.quantity = arr.slice(0, 1).join(" ");
-      this.name = arr.slice(2).join(" ");
-      this.measurement = undefined;
+      if (isNumber(arr[0])) {
+
+        console.log("b")
+        this.quantity = arr.slice(0, 1).join(" ");
+        this.name = arr.slice(2).join(" ");
+        this.measurement = undefined;
+
+      } else {
+        this.name = arr.join(" ");
+      }
 
     } else {
       this.quantity = arr.slice(0, wordOfMeasurementIndex).join(" ")
