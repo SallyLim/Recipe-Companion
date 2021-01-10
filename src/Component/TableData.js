@@ -141,7 +141,7 @@ class TableData extends React.Component {
                   /*add what to do when clicked - render final recipe*/>
                     Finalize
                 </Button>
-                {finalizedData()}
+                {finalizedData(this.state.ingredientArray, this.state.substituteArray, this.state.instructionArray)}
             </div>
         );
     }
