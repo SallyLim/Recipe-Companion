@@ -7,9 +7,9 @@ class TableData extends React.Component {
         super(props)
         this.state = {
             singleIngredients: [
-                {Possess: 'yes', ingredient: 'Flour', substitute:''},
-                {Possess: 'no', ingredient: 'Eggs',substitute:''},
-                {Possess: 'no', ingredient: 'Chicken',substitute:''}
+                {ingredient: 'Flour', substitute:''},
+                {ingredient: 'Eggs',substitute:''},
+                {ingredient: 'Chicken',substitute:''}
             ],
             title : ['Test title']
         }
@@ -18,10 +18,12 @@ class TableData extends React.Component {
     renderTableContent(){
 
         return this.state.singleIngredients.map((singleIngredient, index) =>{
-            const {Possess, ingredient,substitute} = singleIngredient
+            const {ingredient,substitute} = singleIngredient
             return(
                 <tr key={index}> 
-                    <td>{Possess}</td>
+                    <div class="checkbox">
+                        <input type="checkbox" class="hidden" readonly="" tabindex="0"/>
+                    </div>
                     <td>{ingredient}</td>
                     <td>{substitute}</td>
                     {SubstitutesPopUp(["test1", "test2", "test3"], index)}
@@ -31,7 +33,11 @@ class TableData extends React.Component {
     }
 
     renderTableHeader() {
-        let header = Object.keys(this.state.singleIngredients[0])
+        let header = [];
+        header.push("Already in Pantry");
+        Object.keys(this.state.singleIngredients[0]).forEach(item =>{
+            header.push(item)
+        })
         return header.map((key, index) => {
             return <th key={index}>{key.toUpperCase()}</th>
         })
