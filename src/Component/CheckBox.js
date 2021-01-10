@@ -11,7 +11,7 @@ export default class CheckBox extends React.Component {
         return (
             <form>
                 <Input
-                    name='possess'
+                    ingredient='possess'
                     type='checkbox'
                     checked=''
                 />

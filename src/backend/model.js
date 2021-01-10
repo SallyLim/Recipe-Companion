@@ -135,11 +135,11 @@ export default class Ingredient {
         if (isNumber(arr[0])) {
 
           this.quantity = toRational(arr[0]);
-          this.name = arr.slice(1).join(" ");
+          this.ingredient = arr.slice(1).join(" ");
           this.measurement = undefined;
 
         } else {
-          this.name = arr.join(" ");
+          this.ingredient = arr.join(" ");
         }
       } catch (err) {
         this.name = arr.join(" ");
@@ -148,7 +148,7 @@ export default class Ingredient {
     } else {
       try {
         this.quantity = toRational(arr[0])
-        this.name = arr.slice(wordOfMeasurementIndex + 1).join(" ")
+        this.ingredient = arr.slice(wordOfMeasurementIndex + 1).join(" ")
         this.measurement = arr[wordOfMeasurementIndex]
       }
       catch (e) {
