@@ -1,6 +1,7 @@
 import React, {Component, createRef} from "react";
 import './RecipePage.css';
 import TableData from './TableData'
+import finalizedData from "./FinalRendering";
 import Button from 'react-bootstrap/Button'
 
 class RecipePage extends Component {
@@ -18,7 +19,7 @@ class RecipePage extends Component {
     setIngredients(ingredients) {
         this.state.tableData.current.setState({
             ingredientArray: ingredients,
-            substituteArray: ingredients.map((element) => 'None')
+            substituteArray: ingredients.map((element) => [])
         })
     }
 
