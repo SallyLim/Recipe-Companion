@@ -3,6 +3,7 @@ import './TableData.css'
 import SubstitutesPopUp from './SubstitutesPopUp'
 import {Button} from "react-bootstrap";
 import {generateSubstitute} from "../backend/generateSubstitute";
+import finalizedData from "./FinalRendering";
 
 class TableData extends React.Component {
     constructor(props, ingredient, instruction) {
@@ -66,11 +67,11 @@ class TableData extends React.Component {
             title : ['Test title']
         }
 
-        this.state.substituteArray = this.state.ingredientArray.map(el => "none")
+        this.state.substituteArray = this.state.ingredientArray.map(el => [])
     }
     
     renderTableContent(){
-        return this.state.ingredientArray.map((ingredientEntry, index) =>{
+        return this.state.ingredientArray.map((ingredientEntry , index) =>{
             let availableSubstitute = generateSubstitute(ingredientEntry)
             let substituteRow
             if (availableSubstitute === undefined) {
@@ -82,13 +83,21 @@ class TableData extends React.Component {
                 })
             }
 
+            let str = ""
+
+            if (this.state.substituteArray[index].length === 0) {
+                str = "None"
+            } else {
+                this.state.substituteArray[index].map(el => str = str + el.name + "\n")
+            }
+
             return(
                 <tr className="table-entries" key={index}> 
                     <div className="checkbox">
                         <input type="checkbox" className="hidden" readOnly="" tabIndex="0"/>
                     </div>
                     <td>{ingredientEntry.name}</td>
-                    <td>{this.state.substituteArray[index]}</td>
+                    <td>{str}</td>
                     <td>{substituteRow}</td>
                 </tr>
             )
@@ -132,6 +141,7 @@ class TableData extends React.Component {
                   /*add what to do when clicked - render final recipe*/>
                     Finalize
                 </Button>
+                {finalizedData()}
             </div>
         );
     }
