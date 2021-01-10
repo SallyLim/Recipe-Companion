@@ -1,7 +1,6 @@
 import React, {Component, createRef} from "react";
 import './RecipePage.css';
 import TableData from './TableData'
-import Button from 'react-bootstrap/Button'
 
 class RecipePage extends Component {
     

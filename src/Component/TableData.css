@@ -1,4 +1,71 @@
+@import url('https://fonts.googleapis.com/css?family=Berkshire+Swash');
+@import url('https://fonts.googleapis.com/css?family=Walter+Turncoat');
+@import url('https://fonts.googleapis.com/css?family=Coming+Soon');
+
 #ingredients {
     margin-left: auto;
     margin-right: auto;
 }
+
+.ingredient-data{
+    margin-top: 100px;
+    padding-top: 5px;
+    padding-bottom: 10px;
+}
+
+.recipe-title{
+    font-family: 'Berkshire Swash';
+    font-size: 50px;
+}
+
+.header-words{
+    font-family: "Walter Turncoat", bold;
+    font-size: 28px;
+}
+
+.table-entries{
+    font-family: "Coming Soon";
+    font-size: 22px;
+}
+
+.checkbox input[type=checkbox] {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    /* create custom checkbox appearance */
+    width: 25px;
+    height: 25px;
+    /* background-color only for content */
+    border-radius: 6px;
+    background-color: #ffffff;
+}
+
+.checkbox input[type=checkbox]:checked{
+    background-color: rgb(100, 24, 24);
+}
+
+.checkbox:focus {
+    outline: 0 !important;
+}
+
+.finalize-button{
+    width:200px;
+    height:60px;
+    margin-bottom: 100px;
+    border-radius: 6px;
+    border:none;
+    margin-top: 50px;
+    background-color: rgb(95, 158, 160);
+    color:white;
+    font-size: 40px;
+    font-family: "Walter Turncoat";
+}
+
+.finalize-button:focus {
+    outline: 0 !important;
+}
+
+.finalize-button:hover{
+    background-color: rgb(57, 114, 116);
+}
+

@@ -1,7 +1,6 @@
 import React from "react";
 import './TableData.css'
 import SubstitutesPopUp from './SubstitutesPopUp'
-import FinalRecipe from "../FinalRecipe";
 import {Button} from "react-bootstrap";
 import {generateSubstitute} from "../backend/generateSubstitute";
 
@@ -84,7 +83,7 @@ class TableData extends React.Component {
             }
 
             return(
-                <tr key={index}> 
+                <tr className="table-entries" key={index}> 
                     <div className="checkbox">
                         <input type="checkbox" className="hidden" readOnly="" tabIndex="0"/>
                     </div>
@@ -102,7 +101,7 @@ class TableData extends React.Component {
         header.push("Ingredient")
         header.push("Substitute")
         return header.map((key, index) => {
-            return <th key={index}>{key.toUpperCase()}</th>
+            return <th className='header-words' key={index}>{key.toUpperCase()}</th>
         })
     }
 
@@ -121,14 +120,14 @@ class TableData extends React.Component {
 
         return (
             <div className="ingredient-data">
-                <h3 id="title">{title}</h3>
+                <h3 className="recipe-title">{title}</h3>
                 <table id='ingredients'>
                     <tbody>
                         <tr>{this.renderTableHeader()}</tr>
                         {this.renderTableContent()}
                     </tbody>
                 </table>
-                <Button
+                <Button className='finalize-button'
                   variant="finalize"
                   /*add what to do when clicked - render final recipe*/>
                     Finalize
