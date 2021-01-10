@@ -1,6 +1,7 @@
 import React from "react";
 import ReactDOM from 'react-dom';
 import RecipePage from './RecipePage'
+import './URLForm.css'
 
 import { getIngredients, getInstruction } from "../backend/APICall";
 
@@ -11,7 +12,7 @@ export default class URLForm extends React.Component {
 
         return (
             <form>
-                <h1> Please enter the URL of the recipe below. </h1>
+                <h1 className="instruction"> Enter the Recipe URL below. </h1>
                 <input
                 type="text"
                 onChange={(listener) => {

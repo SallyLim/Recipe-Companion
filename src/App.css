@@ -1,10 +1,28 @@
+@import url('https://fonts.googleapis.com/css?family=Berkshire+Swash');
+
 .App {
   text-align: center;
+  background-color: #FEFAE0;
 }
 
+.catch-phrase{
+  font-size: 180px;
+  text-align: left;
+  font-family: 'Berkshire Swash';
+  margin:0;
+  padding-left: 120px;
+  padding-top: 50px;
+  color: rgb(255, 255, 255);
+}
+
+.catch-phrase-2{
+  font-size: 100px;
+  margin:0;
+}
 
 .landing-page {
   background-color: #FEFAE0;
+  background-image: url("landing-background.jpg");
   min-height: 100vh;
   align-items: center;
   justify-content: center;
