@@ -17,15 +17,21 @@ class RecipePage extends Component {
     }
 
     setIngredients(ingredients) {
+        console.log(ingredients)
         this.state.tableData.current.setState({
             ingredientArray: ingredients,
-            substituteArray: ingredients.map((element) => [])
         })
     }
 
     setInstruction(instruction) {
         this.state.tableData.current.setState({
             instructionArray: instruction
+        })
+    }
+
+    setTitle(title) {
+        this.state.tableData.current.setState({
+            title: title
         })
     }
 
