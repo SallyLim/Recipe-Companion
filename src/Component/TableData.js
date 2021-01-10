@@ -5,30 +5,28 @@ import FinalRecipe from "../FinalRecipe";
 import {Button} from "react-bootstrap";
 
 class TableData extends React.Component {
-    constructor(props) {
+    constructor(props, ingredient, instruction) {
         super(props)
         this.state = {
-            singleIngredients: [
-                {ingredient: 'Flour', substitute:'-'},
-                {ingredient: 'Eggs',substitute:'-'},
-                {ingredient: 'Chicken',substitute:'-'}
-            ],
+            ingredientArray: undefined,
+            instructionArray: undefined,
+            substituteArray: undefined,
             title : ['Test title']
         }
     }
     
     renderTableContent(){
-        return this.state.singleIngredients.map((singleIngredient, index) =>{
-            let {ingredient,substitute} = singleIngredient
+        return this.state.ingredientArray.map((ingredientEntry, index) =>{
+            let ingredient = ingredientEntry.ingredient
             return(
                 <tr key={index}> 
                     <div className="checkbox">
                         <input type="checkbox" className="hidden" readOnly="" tabIndex="0"/>
                     </div>
                     <td>{ingredient}</td>
-                    <td>{substitute}</td>
+                    <td>{this.state.substituteArray[index]}</td>
                     {SubstitutesPopUp(["test1", "test2", "test3"], (selectedSubstitute) => {
-                        singleIngredient.substitute = selectedSubstitute
+                        this.state.substituteArray[index] = selectedSubstitute
                         this.forceUpdate()
                     })}
                 </tr>
@@ -39,7 +37,7 @@ class TableData extends React.Component {
     renderTableHeader() {
         let header = [];
         header.push("Already in Pantry");
-        Object.keys(this.state.singleIngredients[0]).forEach(item =>{
+        Object.keys(this.state.ingredientArray[0]).forEach(item =>{
             header.push(item)
         })
         return header.map((key, index) => {
@@ -49,11 +47,15 @@ class TableData extends React.Component {
 
     editSubs(index, sub){
         this.setState(
-            this.state.singleIngredients[index].substitute = sub
+        this.state.substituteArray[index] = sub
         )
     }
 
     render() {
+        if (this.state.ingredientArray === undefined) {
+            return (null)
+        }
+
         const {title} = this.state;
 
         return (

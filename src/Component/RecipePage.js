@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, {Component, createRef} from "react";
 import './RecipePage.css';
 import TableData from './TableData'
 import Button from 'react-bootstrap/Button'
@@ -6,11 +6,26 @@ import Button from 'react-bootstrap/Button'
 class RecipePage extends Component {
     
     constructor(props) {
-		super(props);
-		this.state = {
-			display: false,
-		};
-		this.showRecipeTable = this.showRecipeTable.bind(this);
+        console.log("hello")
+        super(props);
+        this.state = {
+          display: false,
+          tableData: createRef()
+        };
+        this.showRecipeTable = this.showRecipeTable.bind(this);
+    }
+
+    setIngredients(ingredients) {
+        this.state.tableData.current.setState({
+            ingredientArray: ingredients,
+            substituteArray: ingredients.map((element) => 'None')
+        })
+    }
+
+    setInstruction(instruction) {
+        this.state.tableData.current.setState({
+            instructionArray: instruction
+        })
     }
 
     showRecipeTable() {
@@ -26,16 +41,7 @@ class RecipePage extends Component {
 
         return (
             <div className='recipe'>
-                <div>
-                <Button 
-                    variant="outline-primary"
-                    onClick={this.showRecipeTable}>
-                    Show Ingredients
-                </Button>
-                </div>
-                {display && (
-                    <TableData/>
-                )}
+                <TableData ref={this.state.tableData} />
             </div>
         );
     }
