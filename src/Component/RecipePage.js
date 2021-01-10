@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import './RecipePage.css';
 import TableData from './TableData'
-import { Button } from 'react-bootstrap';
+import Button from 'react-bootstrap/Button'
 
 class RecipePage extends Component {
     
@@ -29,7 +29,7 @@ class RecipePage extends Component {
             <div className='recipe'>
                 <div>
                 <Button 
-                    variant="search"
+                    variant="outline-primary"
                     onClick={this.showRecipeTable}>
                     Show Ingredients
                 </Button>

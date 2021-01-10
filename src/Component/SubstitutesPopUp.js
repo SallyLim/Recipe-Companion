@@ -8,7 +8,7 @@ import "./SubstitutesPopUp.css"
             <a>element</a>
             </div>
     });
-}*/
+} FIX issue*/
     
      /* make all substitutes clickable and will swap with current ingredient*/
 
