@@ -1,15 +1,38 @@
-export default function finalizedData(Ingredient, ChosenSubtitute, ) {
+export default function finalizedData(ingredient, chosenSubtitute, instruction) {
   return (
     <div>
-      {finalMeasurement()}
+      {finalMeasurement(ingredient, chosenSubtitute)}
       {finalSteps()}
     </div>
   )
 }
 
-function finalMeasurement() {
+function finalMeasurement(ingredient, chosenSubstitute) {
+  let arr = []
+  ingredient.map((element, index) => {
+    if (chosenSubstitute[index].length === 0) {
+      arr.push(element)
+    } else {
+      chosenSubstitute[index].map(
+        el => arr.push(el)
+      )
+    }
+
+  })
+
+
+  let component = []
+
+  arr.map((el) => {
+    component.push(
+      <tr>
+        <a>{el.quantity + " " + el.measurement + " " + el.name}</a>
+      </tr>
+    )
+  })
+
   return <div>
-    measurement
+    {component}
   </div>
 }
 
