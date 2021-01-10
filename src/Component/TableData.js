@@ -1,5 +1,6 @@
 import React from "react";
 import './TableData.css'
+import SubstitutesPopUp from './SubstitutesPopUp'
 
 class TableData extends React.Component {
     constructor(props) {
@@ -15,12 +16,14 @@ class TableData extends React.Component {
     }
     
     renderTableContent(){
+
         return this.state.singleIngredients.map((singleIngredient, index) =>{
             const {Possess, ingredient} = singleIngredient
             return(
-                <tr key={ingredient}>
+                <tr key={ingredient}> 
                     <td>{Possess}</td>
                     <td>{ingredient}</td>
+                    <SubstitutesPopUp/>
                 </tr>
             )
         })

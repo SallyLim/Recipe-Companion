@@ -26,7 +26,7 @@ class RecipePage extends Component {
         console.log(display)
 
         return (
-            <div className='test'>
+            <div className='recipe'>
                 <div>
                 <Button 
                     variant="search"
@@ -36,6 +36,13 @@ class RecipePage extends Component {
                 </div>
                 {display && (
                     <TableData/>
+                )}
+                {display&& (
+                    <Button 
+                        variant="finalize"
+                        /*add what to do when clicked - render final recipe*/>
+                    Finalize
+                     </Button>
                 )}
             </div>
         );
