@@ -1,6 +1,8 @@
 import React from "react";
 import './TableData.css'
 import SubstitutesPopUp from './SubstitutesPopUp'
+import FinalRecipe from "../FinalRecipe";
+import {Button} from "react-bootstrap";
 
 class TableData extends React.Component {
     constructor(props) {
@@ -56,6 +58,11 @@ class TableData extends React.Component {
                         {this.renderTableContent()}
                     </tbody>
                 </table>
+                <Button
+                  variant="finalize"
+                  /*add what to do when clicked - render final recipe*/>
+                    Finalize
+                </Button>
             </div>
         );
     }

@@ -37,13 +37,6 @@ class RecipePage extends Component {
                 {display && (
                     <TableData/>
                 )}
-                {display&& (
-                    <Button 
-                        variant="finalize"
-                        /*add what to do when clicked - render final recipe*/>
-                    Finalize
-                     </Button>
-                )}
             </div>
         );
     }
