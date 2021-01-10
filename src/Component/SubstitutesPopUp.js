@@ -5,9 +5,14 @@ import "./SubstitutesPopUp.css"
 function renderSubstitutes(subs, modifySelectedSubstitute) {
     let rows = []
     subs.map((element) => {
+      let str = ""
+      element.map((val) => {
+        str = str + val.name + "\n"
+      })
+
       rows.push((
         <tr onClick={() => modifySelectedSubstitute(element)} key={element}>
-          {element}
+          {str}
         </tr>
       ))
     })

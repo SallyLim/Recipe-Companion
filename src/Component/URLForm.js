@@ -17,10 +17,12 @@ export default class URLForm extends React.Component {
                 type="text"
                 onChange={(listener) => {
                     getIngredients(listener.target.value).then(
-                        (ret) => recipePage.current.setIngredients(ret)
+                        (ret) => { recipePage.current.setIngredients(ret)
+                        console.log(JSON.parse(ret)) }
                     )
                     getInstruction(listener.target.value).then(
-                        (ret) => recipePage.current.setInstruction(ret)
+                        (ret) => { recipePage.current.setInstruction(ret)
+                          console.log(JSON.parse(ret)) }
                     )
                 }}
                 />
