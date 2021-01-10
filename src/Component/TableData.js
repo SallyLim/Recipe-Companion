@@ -18,13 +18,12 @@ class TableData extends React.Component {
     }
     
     renderTableContent(){
-
         return this.state.singleIngredients.map((singleIngredient, index) =>{
             const {ingredient,substitute} = singleIngredient
             return(
                 <tr key={index}> 
-                    <div class="checkbox">
-                        <input type="checkbox" class="hidden" readonly="" tabindex="0"/>
+                    <div className="checkbox">
+                        <input type="checkbox" className="hidden" readOnly="" tabIndex="0"/>
                     </div>
                     <td>{ingredient}</td>
                     <td>{substitute}</td>
@@ -51,7 +50,6 @@ class TableData extends React.Component {
         )
     }
 
-    
     render() {
         const {title} = this.state;
 

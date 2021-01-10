@@ -18,7 +18,6 @@ class RecipePage extends Component {
             display: true
         });
         console.log(this.state.display)
-
     }
 
     render() {
