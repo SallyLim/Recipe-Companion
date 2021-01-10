@@ -5,14 +5,17 @@ import "./SubstitutesPopUp.css"
 function renderSubstitutes(subs, modifySelectedSubstitute) {
     let rows = []
     subs.map((element) => {
-      let str = ""
+      let innerRow = []
       element.map((val) => {
-        str = str + val.name + "\n"
+        innerRow.push(<tr>
+          {val.name}
+        </tr>)
       })
+
 
       rows.push((
         <tr onClick={() => modifySelectedSubstitute(element)} key={element}>
-          {str}
+          {innerRow}
         </tr>
       ))
     })
@@ -25,7 +28,11 @@ export default function SubstitutesPopUp(subs, onClick) {
     return (
           <Popup
               trigger={<div className="ingredient-to-sub">Find a substitute</div>}
-              position="right top"
+              display="flex"
+              justify-content="center"
+              text-align="center"
+              position="absolute"
+              modal="true"
               on='click'
               closeOnDocumentClick
               mouseLeaveDelay={300}
