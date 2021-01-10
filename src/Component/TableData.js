@@ -9,9 +9,9 @@ class TableData extends React.Component {
         super(props)
         this.state = {
             singleIngredients: [
-                {ingredient: 'Flour', substitute:''},
-                {ingredient: 'Eggs',substitute:''},
-                {ingredient: 'Chicken',substitute:''}
+                {ingredient: 'Flour', substitute:'-'},
+                {ingredient: 'Eggs',substitute:'-'},
+                {ingredient: 'Chicken',substitute:'-'}
             ],
             title : ['Test title']
         }
@@ -19,7 +19,7 @@ class TableData extends React.Component {
     
     renderTableContent(){
         return this.state.singleIngredients.map((singleIngredient, index) =>{
-            const {ingredient,substitute} = singleIngredient
+            let {ingredient,substitute} = singleIngredient
             return(
                 <tr key={index}> 
                     <div className="checkbox">
@@ -27,7 +27,10 @@ class TableData extends React.Component {
                     </div>
                     <td>{ingredient}</td>
                     <td>{substitute}</td>
-                    {SubstitutesPopUp(["test1", "test2", "test3"], index)}
+                    {SubstitutesPopUp(["test1", "test2", "test3"], (selectedSubstitute) => {
+                        singleIngredient.substitute = selectedSubstitute
+                        this.forceUpdate()
+                    })}
                 </tr>
             )
         })

@@ -2,12 +2,11 @@ import React from "react";
 import Popup from "reactjs-popup";
 import "./SubstitutesPopUp.css" 
 
-function renderSubstitutes(subs,index) {
+function renderSubstitutes(subs, modifySelectedSubstitute) {
     let rows = []
-    console.log(subs)
     subs.map((element) => {
       rows.push((
-        <tr key={element}>
+        <tr onClick={() => modifySelectedSubstitute(element)} key={element}>
           {element}
         </tr>
       ))
@@ -17,7 +16,7 @@ function renderSubstitutes(subs,index) {
     
      /* make all substitutes clickable and will swap with current ingredient*/
 
-export default function SubstitutesPopUp(subs, index) {
+export default function SubstitutesPopUp(subs, onClick) {
     return (
           <Popup
               trigger={<div className="ingredient-to-sub">Find a substitute</div>}
@@ -28,7 +27,7 @@ export default function SubstitutesPopUp(subs, index) {
               mouseEnterDelay={0}
               contentStyle={{padding: "0px", border:"none"}}
               arrow={false}>
-                {renderSubstitutes(subs)}
+                {renderSubstitutes(subs, onClick)}
           </Popup>
     );
 }
