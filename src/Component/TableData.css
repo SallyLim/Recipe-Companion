@@ -3,20 +3,21 @@
 @import url('https://fonts.googleapis.com/css?family=Coming+Soon');
 
 #ingredients {
-    align-items: left;
+    margin-top: 50px;
+    margin-left: auto;
+    margin-right: auto;
     border-collapse: collapse;
 }
 
 .ingredient-data{
     margin-top: 100px;
-    padding-left:50px;
-    padding-top: 5px;
-    padding-bottom: 10px;
 }
+
 
 .recipe-title{
     font-family: 'Berkshire Swash';
     font-size: 50px;
+    margin-top: 10px;
 }
 
 .header-words{
@@ -59,7 +60,7 @@
     margin-top: 30px;
     background-color: rgb(95, 158, 160);
     color:white;
-    font-size: 40px;
+    font-size: 60px;
     font-family: "Walter Turncoat";
 }
 

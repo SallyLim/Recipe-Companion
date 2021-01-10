@@ -1,8 +1,7 @@
-import React,  { useState }  from "react";
-import Button from 'react-bootstrap/Button';
-import Modal from 'react-bootstrap/Modal';
+import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
-import ReactDOM from 'react-dom';
+import { Popup } from 'semantic-ui-react'
+import './SubstitutesPopUp.css'
 
 function renderSubstitutes(subs, modifySelectedSubstitute) {
     let rows = []
@@ -27,11 +26,6 @@ function renderSubstitutes(subs, modifySelectedSubstitute) {
 
 export default function SubstitutesPopUp(subs, onClick) {
 
-  const [show, setShow] = useState(false);
-
-  const handleClose = () => setShow(false);
-  const handleShow = () => setShow(true);
-
     return (
           <Popup
               trigger={<div className="ingredient-to-sub">Find a substitute</div>}
@@ -50,5 +44,3 @@ export default function SubstitutesPopUp(subs, onClick) {
           </Popup>
     );
 }
-
-ReactDOM.render(<SubstitutesPopUp />, document.getElementById('root'));

@@ -1,0 +1,23 @@
+@import url('https://fonts.googleapis.com/css?family=Coming+Soon');
+
+.recipe-steps{
+    background-color: rgb(255, 255, 255);
+    padding-bottom: 90px;
+    padding-left: 60px;
+    padding-right:40px;
+    text-align: left;
+    font-family: 'Coming Soon';
+    font-size: 23px;
+}
+
+
+.ingredients-with-measure{
+    text-align: left;
+    display: block;
+    padding-left: 100px;
+    padding-top:50px;
+    padding-bottom:40px;
+    background-color: white;
+    font-family: 'Coming Soon';
+    font-size: 18px;
+}

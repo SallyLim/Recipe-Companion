@@ -1,3 +1,5 @@
+import './FinalRendering.css';
+
 export default function finalizedData(ingredient, chosenSubtitute, instruction) {
   return (
     <div>
@@ -31,7 +33,7 @@ function finalMeasurement(ingredient, chosenSubstitute) {
     )
   })
 
-  return <div>
+  return <div className='ingredients-with-measure'>
     {component}
   </div>
 }
@@ -41,7 +43,7 @@ function finalSteps(instruction) {
   instruction.map(el => {
     component.push(<li>{el}</li>)
   })
-  return <ol>
+  return <ol className='recipe-steps'>
     {component}
   </ol>
 }
