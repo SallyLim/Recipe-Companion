@@ -26,9 +26,19 @@ function finalMeasurement(ingredient, chosenSubstitute) {
   let component = []
 
   arr.map((el) => {
+    var str = ""
+    if (el.quantity !== undefined) {
+      str = str + Math.round(el.quantity * 100) / 100 + " "
+    }
+    if (el.measurement !== undefined) {
+      str = str + el.measurement + " "
+    }
+    if (el.name !== undefined) {
+      str = str + el.name + " "
+    }
     component.push(
       <tr>
-        <a>{Math.round(el.quantity * 100) / 100 + " " + el.measurement + " " + el.name}</a>
+        <a>{str}</a>
       </tr>
     )
   })
