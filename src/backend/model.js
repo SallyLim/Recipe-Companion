@@ -1,6 +1,6 @@
 
 
-measurement = [
+var measurement = [
   "tablespoon",
   "teaspoon",
   "ounce",

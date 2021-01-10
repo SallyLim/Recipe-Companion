@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import './RecipePage.css';
-import RecipeTable from './RecipeTable'
+import TableData from './TableData'
 import { Button } from 'react-bootstrap';
 
 class RecipePage extends Component {
@@ -35,7 +35,7 @@ class RecipePage extends Component {
                 </Button>
                 </div>
                 {display && (
-                    <RecipeTable/>
+                    <TableData/>
                 )}
             </div>
         );
