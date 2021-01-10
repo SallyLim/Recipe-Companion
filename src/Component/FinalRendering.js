@@ -2,7 +2,7 @@ export default function finalizedData(ingredient, chosenSubtitute, instruction) 
   return (
     <div>
       {finalMeasurement(ingredient, chosenSubtitute)}
-      {finalSteps()}
+      {finalSteps(instruction)}
     </div>
   )
 }
@@ -26,7 +26,7 @@ function finalMeasurement(ingredient, chosenSubstitute) {
   arr.map((el) => {
     component.push(
       <tr>
-        <a>{el.quantity + " " + el.measurement + " " + el.name}</a>
+        <a>{Math.round(el.quantity * 100) / 100 + " " + el.measurement + " " + el.name}</a>
       </tr>
     )
   })
@@ -36,8 +36,12 @@ function finalMeasurement(ingredient, chosenSubstitute) {
   </div>
 }
 
-function finalSteps() {
-  return <div>
-    steps
-  </div>
+function finalSteps(instruction) {
+  let component = []
+  instruction.map(el => {
+    component.push(<li>{el}</li>)
+  })
+  return <ol>
+    {component}
+  </ol>
 }

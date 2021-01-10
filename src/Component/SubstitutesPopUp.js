@@ -7,14 +7,17 @@ import ReactDOM from 'react-dom';
 function renderSubstitutes(subs, modifySelectedSubstitute) {
     let rows = []
     subs.map((element) => {
-      let str = ""
+      let innerRow = []
       element.map((val) => {
-        str = str + val.name + "\n"
+        innerRow.push(<tr>
+          {val.name}
+        </tr>)
       })
 
+
       rows.push((
-        <tr className='sub' onClick={() => modifySelectedSubstitute(element)} key={element}>
-          {str}
+        <tr onClick={() => modifySelectedSubstitute(element)} key={element}>
+          {innerRow}
         </tr>
       ))
     })
@@ -30,26 +33,21 @@ export default function SubstitutesPopUp(subs, onClick) {
   const handleShow = () => setShow(true);
 
     return (
-      <div>
-        <Button variant="primary" onClick={handleShow}>
-          Find Substitute
-        </Button>
-
-        <Modal show={show} onHide={handleClose} animation={false}>
-        <Modal.Header closeButton>
-          <Modal.Title>Pick a Substitute!</Modal.Title>
-          </Modal.Header>
-          <Modal.Body>{renderSubstitutes(subs,onClick)}</Modal.Body>
-          <Modal.Footer>
-            <Button variant="secondary" onClick={handleClose}>
-              Close
-            </Button>
-            <Button variant="primary" onClick={handleClose}>
-              Save Changes
-            </Button>
-          </Modal.Footer>
-        </Modal>
-      </div>
+          <Popup
+              trigger={<div className="ingredient-to-sub">Find a substitute</div>}
+              display="flex"
+              justify-content="center"
+              text-align="center"
+              position="absolute"
+              modal="true"
+              on='click'
+              closeOnDocumentClick
+              mouseLeaveDelay={300}
+              mouseEnterDelay={0}
+              contentStyle={{padding: "0px", border:"none"}}
+              arrow={false}>
+                {renderSubstitutes(subs, onClick)}
+          </Popup>
     );
 }
 

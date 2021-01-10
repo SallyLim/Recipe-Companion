@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import RecipePage from './RecipePage'
 import './URLForm.css'
 
-import { getIngredients, getInstruction } from "../backend/APICall";
+import {getIngredients, getInstruction, getTitle} from "../backend/APICall";
 import { FormField } from "semantic-ui-react";
 
 export default class URLForm extends React.Component {
@@ -22,6 +22,9 @@ export default class URLForm extends React.Component {
                     )
                     getInstruction(listener.target.value).then(
                         (ret) => recipePage.current.setInstruction(ret)
+                    )
+                    getTitle(listener.target.value).then(
+                        (ret) => recipePage.current.setTitle(ret)
                     )
                 }}
                 />
