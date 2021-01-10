@@ -7,7 +7,7 @@ function App() {
     <div className="App">
       <section className="landing-page">
         <h1 className="catch-phrase">Cooking
-        <h1 className="catch-phrase-2">Just got easier</h1></h1>
+        <h1 className="catch-phrase-2">Just got easier.</h1></h1>
         <URLForm />
       </section>
     </div>

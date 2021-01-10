@@ -1,7 +1,11 @@
 export async function getIngredients(url) {
   url = "/ingredient:" + url.replaceAll('/', "%2F")
   console.log(url)
-  return fetch(url)    .then((res) => res.json())
+  return fetch(url)    
+    .then((res) => {
+      console.log(res)
+      res.json()
+    })
     .then((res) => {
       console.log(res)
       return res;
