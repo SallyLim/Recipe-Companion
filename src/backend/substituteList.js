@@ -18,7 +18,7 @@ var megaList = [
     ]
   },
   {
-    original: "Barbeque Sauce",
+    original: "Barbeque",
     subs: [
       ["¾ cup ketchup", "2 tablespoons mustard", "2 tablespoons brown sugar"]
     ]
@@ -45,7 +45,7 @@ var megaList = [
     ]
   },
   {
-    original: "Chocolate, unsweetened",
+    original: "Chocolate",
     subs: [
       ["3 tablespoons cocoa", "1 tablespoon butter"],
       ["3 tablespoons cocoa", "1 tablespoon regular margarine"],
@@ -53,13 +53,13 @@ var megaList = [
     ]
   },
   {
-    original: "Cornstarch (for thickening)",
+    original: "Cornstarch",
     subs: [
       ["2 tablespoons flour"]
     ]
   },
   {
-    original: "Cream, whipping",
+    original: "Cream",
     subs: [
       [ "2 cups whipped cream"]
     ]
@@ -98,31 +98,31 @@ var megaList = [
     ]
   },
   {
-    original: "Herbs, fresh",
+    original: "Herb",
     subs: [
       ["1 teaspoon dried leaf herbs", "½ teaspoon ground dried herbs"]
     ]
   },
   {
-    original: "Ketchup (for use in cooking)",
+    original: "Ketchup",
     subs: [
       ["1 cup tomato sauce", "½ cup sugar", "2 tablespoons vinegar"]
     ]
   },
   {
-    original: "Lemon Zest (fresh grated lemon peel)",
+    original: "Lemon Zest",
     subs: [
       ["½ teaspoon lemon extract"]
     ]
   },
   {
-    original: "Marshmallows, miniature",
+    original: "Marshmallows",
     subs: [
       ["10 large marshmallows"]
     ]
   },
   {
-    original: "Mayonnaise (for use in salads and salad dressings)",
+    original: "Mayonnaise",
     subs: [
       ["1 cup sour cream"],
       ["1 cup yogurt"],
@@ -130,7 +130,7 @@ var megaList = [
     ]
   },
   {
-    original: "Mustard, dry (in cooked mixtures)",
+    original: "Mustard",
     subs: [
       ["1 tablespoon prepared mustard"]
     ]

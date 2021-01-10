@@ -1,4 +1,4 @@
-import { isNumber, toRational } from './numberUtil';
+import { isNumber, toRational } from './numberUtil.js';
 
 var measurement = [
   "dash",
@@ -119,8 +119,7 @@ var measurement = [
   "ins",
   "\"s"
 ]
-
-module.exports = class Ingredient {
+export default class Ingredient {
   constructor(string) {
     var arr = string.split(" ")
     var wordOfMeasurementIndex = -1;
@@ -132,21 +131,29 @@ module.exports = class Ingredient {
     }
 
     if (wordOfMeasurementIndex === -1) {
-      if (isNumber(arr[0])) {
+      try {
+        if (isNumber(arr[0])) {
 
-        console.log("b")
-        this.quantity = arr.slice(0, 1).join(" ");
-        this.name = arr.slice(2).join(" ");
-        this.measurement = undefined;
+          this.quantity = toRational(arr[0]);
+          this.name = arr.slice(1).join(" ");
+          this.measurement = undefined;
 
-      } else {
+        } else {
+          this.name = arr.join(" ");
+        }
+      } catch (err) {
         this.name = arr.join(" ");
+        console.log(arr[0])
       }
-
     } else {
-      this.quantity = arr.slice(0, wordOfMeasurementIndex).join(" ")
-      this.name = arr.slice(wordOfMeasurementIndex + 1).join(" ")
-      this.measurement = arr[wordOfMeasurementIndex]
+      try {
+        this.quantity = toRational(arr[0])
+        this.name = arr.slice(wordOfMeasurementIndex + 1).join(" ")
+        this.measurement = arr[wordOfMeasurementIndex]
+      }
+      catch (e) {
+        console.log(arr.slice(0, wordOfMeasurementIndex).join(" "))
+      }
     }
   }
 }
