@@ -7,6 +7,7 @@ function App() {
   return (
     <div className="App">
       <section className="landing-page">
+        <h1>Cooking got easier</h1>
         <img src={logo} className="App-logo" alt="logo" />
         <URLForm />
       </section>

@@ -1,21 +1,8 @@
-/*import React from "react";
+import React from "react";
+import {CheckBox} from 'semantic-ui-react'
 
-export default class CheckBox extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-          possess: false,
-    };
-    
-    render() {
-        return (
-            <form>
-                <Input
-                    name='possess'
-                    type='checkbox'
-                    checked=''
-                />
-            </form>
-        );
-    }
-}*/
+const PossessCheckBox = () => (
+    <CheckBox/>
+)
+
+export default PossessCheckBox
