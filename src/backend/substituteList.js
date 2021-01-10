@@ -160,10 +160,18 @@ var megaList = [
     ]
   },
   {
-    original: "Sugar, Confectioners or powdered",
+    original: "Rice Wine",
+    subs: [
+      ["1 cup pale dry sherry"],
+      ["1 cup gin"],
+      ["1 cup sherry"],
+    ]
+  },
+  {
+    original: "Sugar, Confectioners, powdered",
     subs: [
       ["1 cup granulated sugar", "1 tablespoon cornstarch; process in a food processor using the metal blade attachment until it's well blended and powdery."]
-      ]
+    ]
   },
   {
     original: "Tomato Juice",

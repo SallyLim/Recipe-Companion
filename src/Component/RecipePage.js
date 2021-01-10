@@ -20,6 +20,7 @@ class RecipePage extends Component {
         console.log(ingredients)
         this.state.tableData.current.setState({
             ingredientArray: ingredients,
+            substituteArray: ingredients.map(el => [])
         })
     }
 
