@@ -18,14 +18,23 @@ export default class URLForm extends React.Component {
                 type="text"
                 onChange={(listener) => {
                     getIngredients(listener.target.value).then(
-                        (ret) => recipePage.current.setIngredients(ret)
+                        (ret) => {
+                          if (ret.length < 1) {
+                            alert("This website is not supported")
+                            return
+                          }
+                          getInstruction(listener.target.value).then(
+                            (ret) => recipePage.current.setInstruction(ret)
+                          )
+                          getTitle(listener.target.value).then(
+                            (ret) => recipePage.current.setTitle(ret)
+                          )
+                          recipePage.current.setIngredients(ret)
+                        }
+                    ).catch(
+                        () => alert("Invalid URL. Try to include the https: or http: in front")
                     )
-                    getInstruction(listener.target.value).then(
-                        (ret) => recipePage.current.setInstruction(ret)
-                    )
-                    getTitle(listener.target.value).then(
-                        (ret) => recipePage.current.setTitle(ret)
-                    )
+
                 }}
                 />
                 <RecipePage ref={recipePage} />
