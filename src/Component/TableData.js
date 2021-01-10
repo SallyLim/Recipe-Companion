@@ -7,9 +7,9 @@ class TableData extends React.Component {
         super(props)
         this.state = {
             singleIngredients: [
-                {Possess: 'yes', ingredient: 'Flour'},
-                {Possess: 'no', ingredient: 'Eggs'},
-                {Possess: 'no', ingredient: 'Chicken'}
+                {Possess: 'yes', ingredient: 'Flour', substitute:''},
+                {Possess: 'no', ingredient: 'Eggs',substitute:''},
+                {Possess: 'no', ingredient: 'Chicken',substitute:''}
             ],
             title : ['Test title']
         }
@@ -18,12 +18,13 @@ class TableData extends React.Component {
     renderTableContent(){
 
         return this.state.singleIngredients.map((singleIngredient, index) =>{
-            const {Possess, ingredient} = singleIngredient
+            const {Possess, ingredient,substitute} = singleIngredient
             return(
-                <tr key={ingredient}> 
+                <tr key={index}> 
                     <td>{Possess}</td>
                     <td>{ingredient}</td>
-                    <SubstitutesPopUp/>
+                    <td>{substitute}</td>
+                    {SubstitutesPopUp(["test1", "test2", "test3"], index)}
                 </tr>
             )
         })
@@ -35,6 +36,13 @@ class TableData extends React.Component {
             return <th key={index}>{key.toUpperCase()}</th>
         })
     }
+
+    editSubs(index, sub){
+        this.setState(
+            this.state.singleIngredients[index].substitute = sub
+        )
+    }
+
     
     render() {
         const {title} = this.state;
