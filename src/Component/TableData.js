@@ -97,8 +97,8 @@ class TableData extends React.Component {
                         <input type="checkbox" className="hidden" readOnly="" tabIndex="0"/>
                     </div>
                     <td>{ingredientEntry.name}</td>
-                    <td>{str}</td>
-                    <td>{substituteRow}</td>
+                    <td width='400px'>{str}</td>
+                    <td width='200px'>{substituteRow}</td>
                 </tr>
             )
         })
@@ -131,7 +131,7 @@ class TableData extends React.Component {
             <div className="ingredient-data">
                 <h3 className="recipe-title">{title}</h3>
                 <table id='ingredients'>
-                    <tbody>
+                    <tbody className='table-body'>
                         <tr>{this.renderTableHeader()}</tr>
                         {this.renderTableContent()}
                     </tbody>

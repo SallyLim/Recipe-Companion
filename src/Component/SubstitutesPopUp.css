@@ -1,3 +1,9 @@
-.substitute{
-    display: block;
+@import url('https://fonts.googleapis.com/css?family=Coming+Soon');
+
+.popup{
+    display:flex;
+    margin:5px;
+    font-size:15px;
+    font-family: 'Coming Soon';
 }
+

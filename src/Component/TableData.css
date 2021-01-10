@@ -3,12 +3,13 @@
 @import url('https://fonts.googleapis.com/css?family=Coming+Soon');
 
 #ingredients {
-    margin-left: auto;
-    margin-right: auto;
+    align-items: left;
+    border-collapse: collapse;
 }
 
 .ingredient-data{
     margin-top: 100px;
+    padding-left:50px;
     padding-top: 5px;
     padding-bottom: 10px;
 }
@@ -20,12 +21,13 @@
 
 .header-words{
     font-family: "Walter Turncoat", bold;
-    font-size: 28px;
+    font-size: s28px;
 }
 
 .table-entries{
     font-family: "Coming Soon";
     font-size: 22px;
+    border: 2px solid rgba(126, 127, 134, 0.432);
 }
 
 .checkbox input[type=checkbox] {
@@ -54,7 +56,7 @@
     margin-bottom: 100px;
     border-radius: 6px;
     border:none;
-    margin-top: 50px;
+    margin-top: 30px;
     background-color: rgb(95, 158, 160);
     color:white;
     font-size: 40px;
@@ -69,3 +71,6 @@
     background-color: rgb(57, 114, 116);
 }
 
+.sub{
+    padding-left: 0;
+}
